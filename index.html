@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Cari Username</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Cari Data Pemain</h1>
+    <input type="text" id="searchInput" placeholder="Masukkan username...">
+    <button onclick="searchUser()">Cari</button>
+  </div>
+
+  <script>
+    function searchUser() {
+      const username = document.getElementById("searchInput").value.trim();
+      if (username) {
+        window.location.href = `profil.html?username=${encodeURIComponent(username)}`;
+      }
+    }
+  </script>
+</body>
+</html>
