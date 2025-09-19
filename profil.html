@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Profil Pemain</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <!-- Banner -->
+  <div class="banner-container">
+    <!-- Banner 1 -->
+    <div class="banner" id="banner1">
+      <img src="assets/user-icon.png" class="user-icon">
+      <div>
+        <h1 id="namaLengkap"></h1>
+        <p id="username"></p>
+        <p id="whatsapp"></p>
+      </div>
+    </div>
+    <!-- Banner 2 -->
+    <div class="banner" id="banner2">
+      <h2>Data Game</h2>
+      <div id="gameInfo"></div>
+    </div>
+  </div>
+
+  <!-- Prestasi -->
+  <div class="prestasi-section">
+    <h2>Prestasi</h2>
+    <div id="prestasiContainer" class="prestasi-grid"></div>
+  </div>
+
+  <script>
+    async function loadProfile() {
+      const params = new URLSearchParams(window.location.search);
+      const username = params.get("username");
+      if (!username) return;
+
+      // Load data user
+      const res = await fetch("data.json");
+      const data = await res.json();
+
+      if (!data[username]) {
+        document.body.innerHTML = "<h1>Username tidak ditemukan!</h1>";
+        return;
+      }
+
+      const user = data[username];
+      document.getElementById("namaLengkap").textContent = user.namaLengkap;
+      document.getElementById("username").textContent = "@" + user.username;
+      document.getElementById("whatsapp").textContent = "WhatsApp: +" + user.whatsapp;
+
+      // Isi banner 2
+      document.getElementById("gameInfo").innerHTML = `
+        <p><b>Nickname MLBB:</b> ${user.mlbb.nickname}</p>
+        <p><b>ID MLBB:</b> ${user.mlbb.id}</p>
+        <p><b>Server MLBB:</b> ${user.mlbb.server}</p>
+        <hr>
+        <p><b>Nickname MCGG:</b> ${user.mcgg.nickname}</p>
+        <p><b>ID MCGG:</b> ${user.mcgg.id}</p>
+        <p><b>Server MCGG:</b> ${user.mcgg.server}</p>
+      `;
+
+      // Load prestasi dari prestasi.json
+      const prestasiRes = await fetch("prestasi.json");
+      const prestasiData = await prestasiRes.json();
+      const prestasiContainer = document.getElementById("prestasiContainer");
+
+      if (prestasiData[username] && prestasiData[username].length > 0) {
+        prestasiData[username].forEach(src => {
+          const img = document.createElement("img");
+          img.src = src;
+          prestasiContainer.appendChild(img);
+        });
+      } else {
+        // kalau kosong → tampilkan default logo
+        const img = document.createElement("img");
+        img.src = "assets/champion-logo.png";
+        prestasiContainer.appendChild(img);
+      }
+    }
+
+    loadProfile();
+  </script>
+</body>
+</html>
