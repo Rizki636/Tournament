@@ -1,0 +1,32 @@
+{
+  "rizki636": {
+    "namaLengkap": "Rizki Setiawan",
+    "username": "rizki636",
+    "whatsapp": "628123456789",
+    "mlbb": {
+      "nickname": "RizkiML",
+      "id": "12345678",
+      "server": "2019"
+    },
+    "mcgg": {
+      "nickname": "RizkiMC",
+      "id": "87654321",
+      "server": "ASIA-1"
+    }
+  },
+  "userlain": {
+    "namaLengkap": "Fajar Pratama",
+    "username": "userlain",
+    "whatsapp": "628987654321",
+    "mlbb": {
+      "nickname": "FajarML",
+      "id": "11223344",
+      "server": "2021"
+    },
+    "mcgg": {
+      "nickname": "FajarMC",
+      "id": "44332211",
+      "server": "EU-2"
+    }
+  }
+}
