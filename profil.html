@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Profil Pemain</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
@@ -11,11 +12,9 @@
     <!-- Banner 1 -->
     <div class="banner" id="banner1">
       <img src="assets/user-icon.png" class="user-icon">
-      <div>
-        <h1 id="namaLengkap"></h1>
-        <p id="username"></p>
-        <p id="whatsapp"></p>
-      </div>
+      <h1 id="namaLengkap"></h1>
+      <p id="username"></p>
+      <p id="whatsapp"></p>
     </div>
     <!-- Banner 2 -->
     <div class="banner" id="banner2">
@@ -55,7 +54,7 @@
         <p><b>Nickname MLBB:</b> ${user.mlbb.nickname}</p>
         <p><b>ID MLBB:</b> ${user.mlbb.id}</p>
         <p><b>Server MLBB:</b> ${user.mlbb.server}</p>
-        <hr>
+        <hr style="border-color: rgba(255,255,255,0.5);">
         <p><b>Nickname MCGG:</b> ${user.mcgg.nickname}</p>
         <p><b>ID MCGG:</b> ${user.mcgg.id}</p>
         <p><b>Server MCGG:</b> ${user.mcgg.server}</p>
@@ -73,7 +72,7 @@
           prestasiContainer.appendChild(img);
         });
       } else {
-        // kalau kosong → tampilkan default logo
+        // default logo kalau kosong
         const img = document.createElement("img");
         img.src = "assets/champion-logo.png";
         prestasiContainer.appendChild(img);
