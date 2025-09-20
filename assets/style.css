@@ -1,51 +1,111 @@
 body {
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   background: #f4f4f9;
+  color: #333;
 }
 
+/* Container Utama */
 .container {
   text-align: center;
-  margin-top: 100px;
+  margin-top: 120px;
+  padding: 20px;
 }
 
 input {
-  padding: 10px;
-  width: 250px;
+  padding: 12px;
+  width: 70%;
+  max-width: 300px;
   font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
 }
 
 button {
-  padding: 10px 20px;
+  padding: 12px 20px;
   font-size: 16px;
   margin-left: 10px;
   cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: #007bff;
+  color: white;
 }
 
-/* Banner */
+button:hover {
+  background: #0056b3;
+}
+
+/* Banner Container */
 .banner-container {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   position: sticky;
   top: 0;
-  background: #fff;
   z-index: 10;
+  width: 100%;
 }
 
 .banner {
   min-width: 100%;
-  padding: 20px;
+  height: 200px;
   box-sizing: border-box;
   scroll-snap-align: start;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+/* Banner 1 */
+#banner1 {
+  background: linear-gradient(135deg, #007bff, #00c6ff);
+  color: white;
   gap: 20px;
 }
 
 .user-icon {
-  width: 60px;
-  height: 60px;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+
+#namaLengkap {
+  font-size: 22px;
+  margin: 0;
+}
+
+#username {
+  font-size: 16px;
+  margin: 4px 0;
+  opacity: 0.9;
+}
+
+#whatsapp {
+  font-size: 14px;
+  margin: 0;
+  opacity: 0.8;
+}
+
+/* Banner 2 */
+#banner2 {
+  background: linear-gradient(135deg, #ff7e5f, #feb47b);
+  color: white;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 20px 30px;
+}
+
+#banner2 h2 {
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+#banner2 p {
+  margin: 4px 0;
+  font-size: 15px;
 }
 
 /* Prestasi */
@@ -55,21 +115,25 @@ button {
 }
 
 .prestasi-section h2 {
-  margin-top: 0;
+  margin: 0;
   position: sticky;
-  top: 80px;
+  top: 200px; /* mengikuti banner */
   background: #fff;
   padding: 10px 0;
+  font-size: 18px;
+  border-bottom: 2px solid #eee;
 }
 
 .prestasi-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
   gap: 15px;
   margin-top: 20px;
 }
 
 .prestasi-grid img {
   width: 100%;
-  height: auto;
+  max-width: 80px;
+  margin: auto;
+  display: block;
 }
