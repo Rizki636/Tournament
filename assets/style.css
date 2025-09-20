@@ -1,0 +1,75 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f4f4f9;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+input {
+  padding: 10px;
+  width: 250px;
+  font-size: 16px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+/* Banner */
+.banner-container {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 10;
+}
+
+.banner {
+  min-width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.user-icon {
+  width: 60px;
+  height: 60px;
+}
+
+/* Prestasi */
+.prestasi-section {
+  padding: 20px;
+  background: #fff;
+}
+
+.prestasi-section h2 {
+  margin-top: 0;
+  position: sticky;
+  top: 80px;
+  background: #fff;
+  padding: 10px 0;
+}
+
+.prestasi-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.prestasi-grid img {
+  width: 100%;
+  height: auto;
+}
